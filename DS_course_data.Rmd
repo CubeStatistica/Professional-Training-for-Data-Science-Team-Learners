@@ -1,0 +1,46 @@
+---
+title: "Data Science Learning 1"
+author: "Umair Waseem"
+date: "2022-09-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library('tidyverse')
+```
+
+## Importing the Data
+Here we are importing students data enrolled for this course. 
+
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+DS_data <- read.csv("Data/Data - DS C1 Course.csv")
+
+
+```
+
+
+
+## Exploratory Data Analysis (EDA)
+
+```{r EDA, echo=FALSE, warning=FALSE, message=FALSE}
+
+library("reticulate")
+
+
+```
+
+##Running Python in RStudio
+
+```{Python}
+import pandas as pd
+import numpy as np
+DS_data.head()
+
+```
+
+
+
+
