@@ -9,6 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
+library(dplyr)
 ```
 
 ## Importing the Data
@@ -17,11 +18,38 @@ library(tidyverse)
 
 course_data <- read_csv("Data/Data - DS C1 Course.csv")
 
-course_data$`Student ID`[1:10];
 
+```
+
+## Data Summary
+```{r}
+summary(course_data)
+
+```
+
+## Inspecting Columns names of the Data
+
+```{r, echo=FALSE}
+
+colnames(course_data)
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Exploratory Data Analysis (EDA)
 
 
