@@ -1,0 +1,32 @@
+---
+title: "Qasim DS Project 1"
+author: "Qasim Basra"
+date: "2022-09-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Read Data Set
+
+# Read Dataset 
+
+```{r}
+require(tidyverse)
+require(dplyr)
+require(ggplot2)
+course_data <- read_csv("Data/Data - DS C1 Course.csv")
+
+
+```
+
+
+```{r}
+
+
+course_data$Age
+
+```
+
