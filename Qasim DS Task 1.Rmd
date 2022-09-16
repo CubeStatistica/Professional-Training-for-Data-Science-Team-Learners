@@ -19,7 +19,7 @@ course_data <- read_csv("Data/Data - DS C1 Course.csv")
 
 course_data$`Student ID`[1:10];
 
-library(reticulate)
+
 
 ```
 ## Exploratory Data Analysis (EDA)
@@ -28,15 +28,25 @@ library(reticulate)
 ```{r EDA }
 
 
-
+library(reticulate)
 
 ```
 
 ## Running Python in R
 We will demonstrate how python will run in RStudio.
 
-```{r}
-
+```{python}
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+data= pd.read_csv("Data/Data - DS C1 Course.csv")
+data_age= data["Age"].sort_values(ascending=False)
+abc=list(data.columns)
+data_age1=data[data["Age"]!= "Under 17"];
+data_age1=data_age1.sort_values("Age");
+sns.countplot("Age",data=data_age1)
+plt.show()
 ```
 
 
