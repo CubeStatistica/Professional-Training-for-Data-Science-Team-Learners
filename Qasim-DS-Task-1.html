@@ -370,40 +370,20 @@ pre code {
 </div>
 
 
-<div id="read-data-set" class="section level1">
-<h1>Read Data Set</h1>
-</div>
-<div id="read-dataset" class="section level1">
-<h1>Read Dataset</h1>
-<pre class="r"><code>require(tidyverse)</code></pre>
-<pre><code>## Loading required package: tidyverse</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-## ✔ ggplot2 3.3.6      ✔ purrr   0.3.4 
-## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-## ✔ tidyr   1.2.0      ✔ stringr 1.4.1 
-## ✔ readr   2.1.2      ✔ forcats 0.5.2 
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>require(dplyr)
-course_data &lt;- read_csv(&quot;Data/Data - DS C1 Course.csv&quot;)</code></pre>
-<pre><code>## New names:
-## Rows: 247 Columns: 29
-## ── Column specification
-## ──────────────────────────────────────────────────────── Delimiter: &quot;,&quot; chr
-## (27): Timestamp, Do you understand that this is a paid course ?...3, Co... dbl
-## (1): Student ID date (1): Date sent
-## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
-## Specify the column types or set `show_col_types = FALSE` to quiet this message.
-## • `Do you understand that this is a paid course ?` -&gt; `Do you understand that
-##   this is a paid course ?...3`
-## • `Do you understand that this is a paid course ?` -&gt; `Do you understand that
-##   this is a paid course ?...21`</code></pre>
-<pre class="r"><code>library(reticulate)</code></pre>
-<pre class="python"><code>
+<div id="importing-the-data" class="section level2">
+<h2>Importing the Data</h2>
+<pre class="r"><code>course_data &lt;- read_csv(&quot;Data/Data - DS C1 Course.csv&quot;)
 
-print(&quot;Hello_world&quot;)</code></pre>
-<pre><code>## Hello_world</code></pre>
+course_data$`Student ID`[1:10];</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code>library(reticulate)</code></pre>
+</div>
+<div id="exploratory-data-analysis-eda" class="section level2">
+<h2>Exploratory Data Analysis (EDA)</h2>
+</div>
+<div id="running-python-in-r" class="section level2">
+<h2>Running Python in R</h2>
+<p>We will demonstrate how python will run in RStudio.</p>
 </div>
 
 
