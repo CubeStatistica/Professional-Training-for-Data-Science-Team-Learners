@@ -3,3 +3,12 @@
 
 # Ada Library Information
 *.ali
+<<<<<<< HEAD
+=======
+.Rproj.user
+
+
+
+Data/
+*.csv
+>>>>>>> b114555 (Updated git ignore and Added Flexdashboard)

@@ -10,6 +10,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(dplyr)
+<<<<<<< HEAD
+=======
+library(ggplot2)
+>>>>>>> b114555 (Updated git ignore and Added Flexdashboard)
 ```
 
 ## Importing the Data
@@ -34,9 +38,32 @@ summary(course_data)
 colnames(course_data)
 
 
+<<<<<<< HEAD
 ```
 
 
+=======
+
+```
+
+## Inspecting null values in the dataset
+
+```{r}
+
+is.na(course_data)
+
+```
+
+## Geometric Point Visulization of City student residing versus age
+
+```{r}
+
+ggplot(data= course_data,aes(x= Age, y=`Which City are you currently residing in?`))+
+  geom_point()
+
+
+```
+>>>>>>> b114555 (Updated git ignore and Added Flexdashboard)
 
 
 
