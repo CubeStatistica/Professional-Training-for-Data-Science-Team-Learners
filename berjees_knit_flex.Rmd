@@ -1,0 +1,34 @@
+---
+title: "Flexdashboard_Berjees"
+output: 
+  flexdashboard::flex_dashboard:
+
+date: "2022-09-18"
+---
+#IMPORTING THE DATA
+```{r}
+df_Raw <- read.csv("Data/Data - DS C1 Course.csv")
+library(magrittr)
+library(dplyr) 
+```
+    
+### Chart 1
+    
+```{r}
+df_Raw %>% group_by(Do.you.understand.that.this.is.a.paid.course..) %>% count()
+```
+   
+Row
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+```   
+ 
+### Chart 3
+    
+```{r}
+```
+
+
