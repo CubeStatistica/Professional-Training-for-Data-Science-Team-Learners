@@ -373,13 +373,18 @@ pre code {
 <div id="importing-the-data" class="section level2">
 <h2>Importing the Data</h2>
 <p>Here we are importing students data enrolled for this course.</p>
+<pre class="r"><code>DS_data &lt;- read.csv(&quot;Data/Data - DS C1 Course.csv&quot;)</code></pre>
 </div>
 <div id="exploratory-data-analysis-eda" class="section level2">
 <h2>Exploratory Data Analysis (EDA)</h2>
+<pre class="r"><code>library(&quot;tidyverse&quot;)
+library(&quot;reticulate&quot;)</code></pre>
 <p>##Running Python in RStudio</p>
-<pre class="python"><code>import pandas as pd
+<pre class="python"><code>
+import pandas as pd
 import numpy as np
-</code></pre>
+DS_data = pd.read_csv(&quot;Data/Data - DS C1 Course.csv&quot;)
+print (DS_data.head())</code></pre>
 </div>
 
 

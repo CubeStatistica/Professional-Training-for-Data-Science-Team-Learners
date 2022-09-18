@@ -4,18 +4,17 @@ author: "Umair Waseem"
 date: "2022-09-11"
 output: html_document
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
-library('tidyverse')
+knitr::knit_engines$set(python = reticulate::eng_python)
 ```
+
 
 ## Importing the Data
 Here we are importing students data enrolled for this course. 
 
 
-```{r, warning=FALSE, message=FALSE, echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo = TRUE }
 DS_data <- read.csv("Data/Data - DS C1 Course.csv")
 
 
@@ -25,20 +24,22 @@ DS_data <- read.csv("Data/Data - DS C1 Course.csv")
 
 ## Exploratory Data Analysis (EDA)
 
-```{r EDA, echo=FALSE, warning=FALSE, message=FALSE}
-
+```{r EDA, message=FALSE, warning=FALSE}
+library("tidyverse")
 library("reticulate")
+
 
 
 ```
 
 ##Running Python in RStudio
 
-```{Python}
+```{Python, echo=TRUE}
+
 import pandas as pd
 import numpy as np
-DS_data.head()
-
+DS_data = pd.read_csv("Data/Data - DS C1 Course.csv")
+print (DS_data.head())
 ```
 
 
