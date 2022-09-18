@@ -10,14 +10,17 @@ date: "2022-09-18"
 df_Raw <- read.csv("Data/Data - DS C1 Course.csv")
 library(magrittr)
 library(dplyr) 
+library(flexdashboard)
+library(knitr)
+library(kableExtra)
 ```
-    
+# STATISTICS    
 ### Chart 1
     
 ```{r}
-df_Raw %>% group_by(Do.you.understand.that.this.is.a.paid.course..) %>% count()
+df_Raw %>% group_by(Gender) %>% count() %>% kable()
 ```
-   
+# PAGE 3   
 Row
 -------------------------------------
    
