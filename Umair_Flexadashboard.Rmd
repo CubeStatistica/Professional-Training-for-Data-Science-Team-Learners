@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "CubeStatistica Students FlexDashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -22,12 +22,18 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-ds_data <- read_csv(("Data/Data - DS C1 Course.csv"))
-head(ds_data)
-ds_data %>% group_by(`Do you understand that this is a paid course ?...3`) %>% summarize(n=n())
-ds_data %>% group_by(`Do you understand that this is a paid course ?...3`) %>% count()  
+dfRaw <- read_csv(("Data/Data - DS C1 Course.csv"))
+#head(dfRaw)
+# df_paid %>% group_by(`Do you understand that this is a paid course ?...3`) %>% summarize(n=n())
+df_paid <- dfRaw %>% group_by(`Do you understand that this is a paid course ?...3`) %>% count()  
+ggplot (df_paid, aes (x = `Do you understand that this is a paid course ?...3`, y = n)) + geom_bar(stat ="identity", fill = "green")
 
+
+df_age <- dfRaw %>% group_by(`Age`) %>% count()  
+ggplot (df_age, aes (x = Age , y = n)) + geom_bar(stat ="identity", fill = "green")
 ```
+
+
 
 Column {data-width=350}
 -----------------------------------------------------------------------
@@ -35,7 +41,10 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-ds_data %>% group_by(Gender)  %>% count() %>% kable()
+dfRaw %>% group_by(Gender)  %>% count() %>% kable()
+
+
+
 ```
 
 ### Chart C
