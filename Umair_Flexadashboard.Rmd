@@ -16,10 +16,16 @@ library("knitr")
 library("kableExtra")
 ```
 
-Column {data-width=650}
+
+
+# Dashboard 01
+
+Column {data-width=400}
 -----------------------------------------------------------------------
 
-### Chart A
+
+
+### Char 01
 
 ```{r}
 dfRaw <- read_csv(("Data/Data - DS C1 Course.csv"))
@@ -35,7 +41,7 @@ ggplot (df_age, aes (x = Age , y = n)) + geom_bar(stat ="identity", fill = "gree
 
 
 
-Column {data-width=350}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Chart B
