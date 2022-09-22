@@ -1,0 +1,517 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={EDA with Dplyr and Ggplot},
+  pdfauthor={Cube Statistica},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{EDA with Dplyr and Ggplot}
+\author{Cube Statistica}
+\date{2022-09-20}
+
+\begin{document}
+\maketitle
+
+The tutorial will show you how to use data cleaning, transformation and
+visualization to explore the data in the systematic manner. This is a
+task Statisticians refer as \textbf{Exploratory Data Analysis (EDA)}.
+
+Specifically, EDA is an iterative cycle :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Generate questions about the data.
+\item
+  Search for answers by visualizing, transforming and modelling your
+  data.
+\item
+  Use what you learn to refine your questions and/or generate new
+  questions.
+\end{enumerate}
+
+Data Cleaning is just one application of EDA: A process of transforming
+raw data into consistent data that can be analyzed.
+
+Some of the examples of data cleaning is that the data is consistent,
+have correct data types and missing data is imputed. We will start with
+loading the tidyverse package and our data set.
+
+\hypertarget{importing-packages}{%
+\subsection{Importing Packages}\label{importing-packages}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(lubridate)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataRaw }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"Data/Data {-} DS C1 Course.csv"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(dataRaw, }\AttributeTok{n =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 29
+##    Timestamp  Stude~1 Do yo~2 Cours~3 Date sen~4 Payment Payme~5 How a~6 Which~7
+##    <chr>        <dbl> <chr>   <chr>   <date>     <chr>   <chr>   <chr>   <chr>  
+##  1 8/25/2022~       1 Yes     Sent    2022-08-26 Paid    Yes     Throug~ Pakist~
+##  2 8/22/2022~       2 No      Sent    2022-08-23 Pending <NA>    Friend  Pakist~
+##  3 8/22/2022~       3 No      Sent    2022-08-23 Pending <NA>    WhatsA~ Pakist~
+##  4 8/22/2022~       4 No      Sent    2022-08-23 Pending <NA>    Whatsa~ Pakist~
+##  5 8/22/2022~       5 Yes     Sent    2022-08-23 Maybe   <NA>    Throug~ Pakist~
+##  6 8/22/2022~       6 No      Sent    2022-08-23 Pending <NA>    WhatsA~ Pakist~
+##  7 8/22/2022~       7 No      Sent    2022-08-23 Pending <NA>    Linked~ Pakist~
+##  8 8/22/2022~       8 Yes     Sent    2022-08-23 Pending <NA>    Group   Pakist~
+##  9 8/22/2022~       9 No      Sent    2022-08-24 Pending <NA>    linked~ Pakist~
+## 10 8/22/2022~      10 No      Sent    2022-08-24 Pending <NA>    Linked~ Pakist~
+## # ... with 20 more variables:
+## #   `Which City are you currently residing in?` <chr>, Gender <chr>, Age <chr>,
+## #   `Are you currently attending University / College?` <chr>,
+## #   `Latest Degree Completed or in Progress?` <chr>,
+## #   `Name of University or College currently or previously attended?` <chr>,
+## #   `Discipline of Degree?` <chr>,
+## #   `Have you taken any foundational course in data science / econometrics / statistics / computer science?` <chr>, ...
+\end{verbatim}
+
+EDA is fundamentally a creative process. Like any creative processes,
+the key is to ask quality questions. In our course data set, we will ask
+the following questions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How has number of responses in form varied over the time?
+\item
+  What is the distribution of university the students filled out the
+  form?
+\item
+  Which social platform students heard about the course?
+\end{enumerate}
+
+While we will restrict our tutorial to these questions but you can think
+of other questions when making your dashboard:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What is Distribution of country and city the responses are from ?
+\item
+  How does paying for the course correlate with Gender and Age ?
+\item
+  What Prior Work experience in R and Python the students have ?
+\end{enumerate}
+
+\hypertarget{data-cleaning}{%
+\subsection{Data Cleaning}\label{data-cleaning}}
+
+For our set of specified questions, we start by selecting the variables
+of interest. Specifically, we will select the following variables:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Student ID
+\item
+  Time stamp
+\item
+  Name of University or College currently or previously attended ?
+\end{enumerate}
+
+Before data selection, we will rename the columns as some columns have
+spaces and have long names. We will use rename function in dplyr
+package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataRenamed }\OtherTok{\textless{}{-}}\NormalTok{ dataRaw }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{rename}\NormalTok{(}\StringTok{"Id"} \OtherTok{=} \StringTok{"Student ID"}\NormalTok{,}
+         \StringTok{"Date\_time"} \OtherTok{=} \StringTok{"Timestamp"}\NormalTok{,}
+         \StringTok{"Qr\_uni\_col"} \OtherTok{=} \StringTok{"Name of University or College currently or previously attended?"}
+\NormalTok{         )}
+
+\CommentTok{\# Check for renaming}
+\FunctionTok{names}\NormalTok{(dataRenamed[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Date_time"                                         
+##  [2] "Id"                                                
+##  [3] "Do you understand that this is a paid course ?...3"
+##  [4] "Course Fee Email"                                  
+##  [5] "Date sent"                                         
+##  [6] "Payment"                                           
+##  [7] "Payment Receipt Sent"                              
+##  [8] "How and where did you hear about this course?"     
+##  [9] "Which Country are you currently residing in?"      
+## [10] "Which City are you currently residing in?"
+\end{verbatim}
+
+Now we will select the required variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# select variables for analysis}
+\NormalTok{dataSelected }\OtherTok{\textless{}{-}} \FunctionTok{select}\NormalTok{(dataRenamed,}
+\NormalTok{                       Id, Date\_time, Qr\_uni\_col)}
+
+\CommentTok{\# make ID rowname of data frame}
+\NormalTok{dataSelected }\OtherTok{\textless{}{-}} \FunctionTok{column\_to\_rownames}\NormalTok{(dataSelected , }\AttributeTok{var =} \StringTok{"Id"}\NormalTok{)}
+
+\FunctionTok{head}\NormalTok{(dataSelected)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            Date_time                                            Qr_uni_col
+## 1 8/25/2022 14:35:19                                University of Illinois
+## 2  8/22/2022 5:25:04                                        Ned university
+## 3  8/22/2022 5:26:34                  Univeristy of agriculture, Faislabad
+## 4  8/22/2022 5:27:38 Institute of Management Sciences Peshawar (IMScieces)
+## 5  8/22/2022 5:31:42                  Institute of Business Administration
+## 6  8/22/2022 5:32:14                  Institute of Business Administration
+\end{verbatim}
+
+\hypertarget{how-has-number-of-responses-in-form-varied-over-the-time}{%
+\subsubsection{How has number of responses in form varied over the
+time?}\label{how-has-number-of-responses-in-form-varied-over-the-time}}
+
+Let us say we want to analyze how number of responses have varied over
+time. For this we start by correcting the date-time variable type with
+help of lubridate
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Convert time column to data{-}time type}
+\NormalTok{dataSelected}\SpecialCharTok{$}\NormalTok{Date\_time }\OtherTok{\textless{}{-}}\NormalTok{ lubridate}\SpecialCharTok{::}\FunctionTok{mdy\_hms}\NormalTok{(dataSelected}\SpecialCharTok{$}\NormalTok{Date\_time)}
+
+\CommentTok{\# Make date and time in separate variables}
+\NormalTok{dataSelected }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{separate}\NormalTok{(dataSelected, Date\_time, }\FunctionTok{c}\NormalTok{(}\StringTok{"Date"}\NormalTok{, }\StringTok{"Time"}\NormalTok{), }\AttributeTok{sep =} \StringTok{" "}\NormalTok{)}
+
+\CommentTok{\# Convert Date to date type}
+\NormalTok{dataSelected}\SpecialCharTok{$}\NormalTok{Date }\OtherTok{\textless{}{-}}\NormalTok{ lubridate}\SpecialCharTok{::}\FunctionTok{ymd}\NormalTok{(dataSelected}\SpecialCharTok{$}\NormalTok{Date)}
+
+\FunctionTok{head}\NormalTok{(dataSelected)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         Date     Time                                            Qr_uni_col
+## 1 2022-08-25 14:35:19                                University of Illinois
+## 2 2022-08-22 05:25:04                                        Ned university
+## 3 2022-08-22 05:26:34                  Univeristy of agriculture, Faislabad
+## 4 2022-08-22 05:27:38 Institute of Management Sciences Peshawar (IMScieces)
+## 5 2022-08-22 05:31:42                  Institute of Business Administration
+## 6 2022-08-22 05:32:14                  Institute of Business Administration
+\end{verbatim}
+
+After separating date and time variables, we can create grouped
+summaries to see students filling out the form
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# make grouped summary of students by day}
+\NormalTok{groupedDate }\OtherTok{\textless{}{-}}\NormalTok{ dataSelected }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(}\AttributeTok{day =}\NormalTok{ lubridate}\SpecialCharTok{::}\FunctionTok{floor\_date}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Date, }\AttributeTok{unit =} \StringTok{\textquotesingle{}day\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{grouped =} \FunctionTok{n}\NormalTok{())}
+
+\NormalTok{groupedDate}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 14 x 2
+##    day        grouped
+##    <date>       <int>
+##  1 2022-08-20       1
+##  2 2022-08-22     109
+##  3 2022-08-23      24
+##  4 2022-08-24      20
+##  5 2022-08-25      42
+##  6 2022-08-26       9
+##  7 2022-08-27       5
+##  8 2022-08-28      18
+##  9 2022-08-29       5
+## 10 2022-08-31       6
+## 11 2022-09-01       4
+## 12 2022-09-03       2
+## 13 2022-09-04       1
+## 14 2022-09-07       1
+\end{verbatim}
+
+Now we can make a time series plot to see the trend of course
+participation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ groupedDate, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ day, }\AttributeTok{y =}\NormalTok{ grouped)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Days"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Count"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_date}\NormalTok{(}\AttributeTok{limit=}\FunctionTok{c}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2022{-}08{-}20"}\NormalTok{),}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2022{-}09{-}07"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{EDA-with-Dplyr-and-Ggplot_files/figure-latex/plot of students participation-1.pdf}
+
+We see that 109, 44.1\% of total registrations, were filled on August
+22nd. After which there was sharp decline. The form count increased on
+August 25th by 52.3 \% compared to its previous day and then again on
+August 28th.
+
+\hypertarget{what-is-the-distribution-of-university}{%
+\subsubsection{What is the distribution of university
+?}\label{what-is-the-distribution-of-university}}
+
+Another important aspect of registrations to see which University and
+discipline the students are from. We start by cleaning the university
+variable
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataSelected }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(Qr\_uni\_col) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{distinct}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\#this line removes duplicates}
+  \FunctionTok{count}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     n
+## 1 143
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# First six unique values}
+\FunctionTok{head}\NormalTok{(}\FunctionTok{unique}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dataSelected}\SpecialCharTok{$}\NormalTok{Qr\_uni\_col))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "University of Illinois"                               
+## [2] "Ned university"                                       
+## [3] "Univeristy of agriculture, Faislabad"                 
+## [4] "Institute of Management Sciences Peshawar (IMScieces)"
+## [5] "Institute of Business Administration"                 
+## [6] "Institute of Management Sciences Peshawar"
+\end{verbatim}
+
+There are 143 unique values currently for University background. If you
+see the list, there are duplicates in the entries. There are some clear
+categories that we can combine jobs into. For example, ``Iba Karachi'',
+``IBA'' and ``Institute of Business Administration'' can be combined
+into ``IBA''. We will use three functions to do this
+
+\begin{itemize}
+\tightlist
+\item
+  mutate() to change or create new variables
+\item
+  case\_when() as a kind of if/else command
+\item
+  str\_detect() to select specified text
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataCategorized }\OtherTok{\textless{}{-}}\NormalTok{ dataSelected }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{Uni\_col =} \FunctionTok{case\_when}\NormalTok{(}
+      \FunctionTok{str\_detect}\NormalTok{(}
+\NormalTok{        Qr\_uni\_col,}
+        \StringTok{"IBA|Institute of Business Administration|Iba Karachi|IBA, Karachi|Iba Karachi|institute of business administration|Institute of business administration|INSTITUTE OF BUSINESS ADMINISTRATION KARACHI|Institute Of Business Administration|Institute Of Business Administration, Karachi|Institute of Business Adminstration|Institute of business administration karachi|INSTITUTE OF BUISNESS ADMINISTRATION KARACHI"}
+\NormalTok{      ) }\SpecialCharTok{\textasciitilde{}} \StringTok{"IBA"}\NormalTok{,}
+      \FunctionTok{str\_detect}\NormalTok{(}
+\NormalTok{        Qr\_uni\_col,}
+        \StringTok{"Azam|Quaid I azam university|Quaid{-}I{-}Azam University, Islamabad|Quaid e Azam University|Quaid e Azam university       Islamabad|Quaid{-}e{-}Azam University Islamabad|Quaid{-}i{-}Azam University Islamabad|Quaid e Azzam university Islamabad"}
+\NormalTok{      ) }\SpecialCharTok{\textasciitilde{}} \StringTok{"QU"}\NormalTok{,}
+      \FunctionTok{str\_detect}\NormalTok{(}
+\NormalTok{        Qr\_uni\_col,}
+        \StringTok{"Sir syed university of Engineering Technology|Sir syed university of engineering and technology|Sir Syed University|Sir Syed University Of Engineering And Technology|Sir Syed University Of Engineering \& Technology|Sir syed University of engineering and technology|Sirsyed university of engineering and technology|Sir Syed University of Engineering and Technology|Sir Syed university of engineering and technology|Sur Syed University of Engineering and Technology|Sir Syed University Engineering Technology"}
+\NormalTok{      ) }\SpecialCharTok{\textasciitilde{}} \StringTok{"SYED"}\NormalTok{,}
+      \FunctionTok{str\_detect}\NormalTok{(}
+\NormalTok{        Qr\_uni\_col,}
+        \StringTok{"Ned university|NED University of Engineering and Technology Karachi|NED|Ned University"}
+\NormalTok{      ) }\SpecialCharTok{\textasciitilde{}} \StringTok{"NED"}\NormalTok{,}
+      \FunctionTok{str\_detect}\NormalTok{(Qr\_uni\_col, }\StringTok{"IQRA|Iqra|iqra|iqra university"}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \StringTok{"IQRA"}\NormalTok{,}
+      \FunctionTok{str\_detect}\NormalTok{(Qr\_uni\_col, }\StringTok{"Sindh"}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \StringTok{"SMIU"}\NormalTok{ ,}
+      \FunctionTok{str\_detect}\NormalTok{(Qr\_uni\_col, }\StringTok{"Karachi|University of karachi"}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \StringTok{"KU"}\NormalTok{,}
+      \FunctionTok{str\_detect}\NormalTok{(Qr\_uni\_col, }\StringTok{"Szabist"}\NormalTok{, ) }\SpecialCharTok{\textasciitilde{}} \StringTok{"SZABIST"}\NormalTok{,}
+      \FunctionTok{str\_detect}\NormalTok{(Qr\_uni\_col, }\StringTok{"Management|management"}\NormalTok{, ) }\SpecialCharTok{\textasciitilde{}} \StringTok{"IOBM"}\NormalTok{,}
+      \FunctionTok{str\_detect}\NormalTok{(Qr\_uni\_col, }\StringTok{"University of engineering and technology Peshawar"}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \StringTok{"UET"}\NormalTok{,}
+      \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}}\NormalTok{ Qr\_uni\_col  }\CommentTok{\#keep all others same}
+\NormalTok{    )}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+Let us check how many distinct entries we have.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataCategorized }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(Uni\_col) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{distinct}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\#this line removes duplicates}
+  \FunctionTok{count}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    n
+## 1 71
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# see the unique values}
+\FunctionTok{head}\NormalTok{(}\FunctionTok{unique}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dataCategorized}\SpecialCharTok{$}\NormalTok{Uni\_col))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "University of Illinois"              
+## [2] "NED"                                 
+## [3] "Univeristy of agriculture, Faislabad"
+## [4] "IOBM"                                
+## [5] "IBA"                                 
+## [6] "SMIU"
+\end{verbatim}
+
+We have reduced from 143 unique values to 71 values only. This means we
+have made our data more consistent. Now we make Bar Plot to visualize
+it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Sort universities by their frequencies}
+\NormalTok{uniSorted }\OtherTok{\textless{}{-}}\NormalTok{ dataCategorized }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Uni\_col) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Total =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(Total)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{head}\NormalTok{(}\AttributeTok{n =} \DecValTok{6}\NormalTok{)}
+  
+\CommentTok{\# Make Bar Plot}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ uniSorted, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=} \FunctionTok{reorder}\NormalTok{(Uni\_col, Total), }\AttributeTok{y =}\NormalTok{ Total)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Number of Students"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"University/College"}\NormalTok{) }
+  
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{EDA-with-Dplyr-and-Ggplot_files/figure-latex/bar plot university-1.pdf}
+
+We see that 29.1\% of the students participated were from IBA followed
+by IQRA and Sir Syed University 10.9\% and 10.1 \% respectively.
+
+\end{document}
