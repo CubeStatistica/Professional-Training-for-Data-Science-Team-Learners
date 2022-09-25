@@ -10,16 +10,17 @@ output:
 library(flexdashboard)
 library(tidyverse)
 ```
-
+# Page 1
 Column
 -----------------------------------------------------------------------
 
 ### Chart A
+### Chart B
 
 ## Importing Data from csv
+### Importing Data from csv
 ```{r}
 course_data <- read_csv("Data/Data - DS C1 Course.csv")
-
 
 
 ```
@@ -27,24 +28,31 @@ course_data <- read_csv("Data/Data - DS C1 Course.csv")
 ## Summarize the Data
 ```{r}
 
-head(course_data)
+course_data %>% group_by(Gender) %>%  count()
 
 ```
 
 Column 
 -----------------------------------------------------------------------
 
-### Chart B
+### Chart C
 
+```{r}
+#course_data %>% colnames()
+
+```
 
 
 ```{r}
+
+
 
 ```
 
 ### Chart C
 
 ```{r}
+
 
 ```
 
@@ -53,3 +61,5 @@ Column
 -----------------------------------------------------------------------
 
 ### Qasim's Flexdashboard
+
+# Page 2
