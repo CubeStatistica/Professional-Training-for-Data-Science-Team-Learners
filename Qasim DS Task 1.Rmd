@@ -55,7 +55,7 @@ colnames(course_data)
 
 ```{r}
 
-#is.na(course_data)
+is.na(course_data)
 
 ```
 
