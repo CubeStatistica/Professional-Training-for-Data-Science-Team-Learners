@@ -10,10 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(dplyr)
-<<<<<<< HEAD
-=======
 library(ggplot2)
->>>>>>> b114555 (Updated git ignore and Added Flexdashboard)
+
 ```
 
 ## Importing the Data
@@ -27,7 +25,7 @@ course_data <- read_csv("Data/Data - DS C1 Course.csv")
 
 ## Data Summary
 ```{r}
-summary(course_data)
+#summary(course_data)
 
 ```
 
@@ -38,13 +36,11 @@ summary(course_data)
 colnames(course_data)
 
 
-<<<<<<< HEAD
 ```
 
 
-=======
 
-```
+
 
 ## Inspecting null values in the dataset
 
@@ -63,9 +59,22 @@ ggplot(data= course_data,aes(x= Age, y=`Which City are you currently residing in
 
 
 ```
->>>>>>> b114555 (Updated git ignore and Added Flexdashboard)
 
 
+#
+```{r}
+
+colnames(course_data)
+
+```
+
+
+```{r}
+
+
+
+
+```
 
 
 
@@ -90,7 +99,7 @@ library(reticulate)
 ## Running Python in R
 We will demonstrate how python will run in RStudio.
 
-```{python}
+#```{python}
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -102,7 +111,7 @@ data_age1=data[data["Age"]!= "Under 17"];
 data_age1=data_age1.sort_values("Age");
 sns.countplot("Age",data=data_age1)
 plt.show()
-```
+
 
 
 
