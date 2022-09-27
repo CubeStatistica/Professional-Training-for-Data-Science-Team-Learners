@@ -14,6 +14,15 @@ library(ggplot2)
 
 ```
 
+## Importing Python Packages 
+```{python}
+import pandas as pd
+import numpy as np
+
+
+```
+
+
 ## Importing the Data
 
 ```{r , warning=FALSE,message=FALSE}
@@ -46,7 +55,7 @@ colnames(course_data)
 
 ```{r}
 
-is.na(course_data)
+#is.na(course_data)
 
 ```
 
@@ -61,32 +70,12 @@ ggplot(data= course_data,aes(x= Age, y=`Which City are you currently residing in
 ```
 
 
-#
-```{r}
-
-colnames(course_data)
-
-```
-
-
-```{r}
-
-
-
-
-```
 
 
 
 
 
-
-
-
-
-
-
-## Exploratory Data Analysis (EDA)
+## Running python in R Studio
 
 
 ```{r EDA }
@@ -94,25 +83,22 @@ colnames(course_data)
 
 library(reticulate)
 
+
+
 ```
 
 ## Running Python in R
 We will demonstrate how python will run in RStudio.
 
-#```{python}
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-data= pd.read_csv("Data/Data - DS C1 Course.csv")
-data_age= data["Age"].sort_values(ascending=False)
-abc=list(data.columns)
-data_age1=data[data["Age"]!= "Under 17"];
-data_age1=data_age1.sort_values("Age");
-sns.countplot("Age",data=data_age1)
-plt.show()
 
 
+## Inspecting unique entities across all the columns
+```{python}
+
+df=pd.read_csv("Data/Data - DS C1 Course.csv")
+for x in df:
+  print(df[x].unique())
+```
 
 
 
