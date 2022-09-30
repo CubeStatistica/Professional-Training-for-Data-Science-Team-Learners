@@ -15,7 +15,7 @@ library(tidyverse)
 library(lubridate)
 library(stringr)
 library(knitr)
-#library(KableExtra)
+
 ```
 
 # Importing Data
@@ -33,6 +33,13 @@ head(dfRaw)
 ```{r}
 summary(dfRaw)
 ```
+
+# Finding NA Values in Data
+```{r}
+is.na(dfRaw)
+sum(is.na(dfRaw))
+```
+
 
 # Visualizing Data
 ```{r}
