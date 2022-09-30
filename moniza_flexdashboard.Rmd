@@ -1,17 +1,17 @@
 ---
-title: "Untitled"
-output: 
-  flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+title: "moniza_flexdashboard"
+output:flexdashboard::flex_dashboard:
+runtime: shiny    
 ---
 
 ```{r setup, include=FALSE}
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+
 library(flexdashboard)
 library(tidyverse)
 ```
 
-Column 
+Course Data Analysis {.sidebar}
 -----------------------------------------------------------------------
 # Course Data
 
@@ -20,8 +20,7 @@ Column
 ```{r, echo=TRUE}
 dfRaw <- read_csv("Data/Data - DS C1 Course.csv")
 ```
-Column 
------------------------------------------------------------------------
+
 # Statistics
 ### Summarizing Data
 
@@ -48,8 +47,7 @@ dfRaw %>% group_by(`Prior Work Experience in Data Science or Machine Learning`,G
 dfRaw %>% group_by(Gender,Payment) %>% count()
 ```
 
-Column 
------------------------------------------------------------------------
+
 # Interesting Trends
 ### Analysis of which platform was most popular
 
