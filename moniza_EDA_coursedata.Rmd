@@ -38,7 +38,19 @@ summary(dfRaw)
 ```{r}
 is.na(dfRaw)
 sum(is.na(dfRaw))
+is.na(dfRaw$Payment)
 ```
+
+# Changing NA Values to No in Col'Payment'
+```{r}
+dfRaw$Payment[is.na(dfRaw$Payment)] <- 'No' 
+dfRaw$Payment
+```
+# Replacing 'Maybe' with 'Pending' in dfRaw$Payment
+```{r}
+gsub('Maybe','Pending',dfRaw$Payment,ignore.case = TRUE)
+```
+
 
 
 # Visualizing Data
