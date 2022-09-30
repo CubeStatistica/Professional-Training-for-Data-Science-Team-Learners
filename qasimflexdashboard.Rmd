@@ -14,8 +14,6 @@ library(tidyverse)
 Column
 -----------------------------------------------------------------------
 
-### Chart A
-### Chart B
 
 ## Importing Data from csv
 ### Importing Data from csv
@@ -26,19 +24,20 @@ course_data <- read_csv("Data/Data - DS C1 Course.csv")
 ```
 
 ## Summarize the Data
+### Summarize the Data
 ```{r}
 
-course_data %>% group_by(Gender) %>%  count()
+summary(course_data)
 
 ```
 
 Column 
 -----------------------------------------------------------------------
 
-### Chart C
+### Inspecting column names
 
 ```{r}
-#course_data %>% colnames()
+course_data %>% colnames()
 
 ```
 
@@ -60,6 +59,6 @@ Column
 Column 
 -----------------------------------------------------------------------
 
-### Qasim's Flexdashboard
+### Chart D
 
 # Page 2
