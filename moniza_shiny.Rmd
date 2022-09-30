@@ -1,0 +1,61 @@
+---
+title: "moniza_shiny"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(shiny)
+library(dplyr)
+library(plotly)
+library(ggplot2)
+```
+
+```{r}
+dfRaw <- read_csv("Data/Data - DS C1 Course.csv")
+Total_Count <- dfRaw %>% count(total_count=n())
+categorial.variable <- c('Gender','Payment',"`Which City are you currently residing in?`")
+numeric.variable <- c('Age', 'Total_Count')
+
+```
+
+Column {.sidebar data-width=200}
+----------------------------------------------------------------------
+
+```{r}
+selectInput("categorial_variable",label="Select Categorial Variable", choices = categorial.variable )
+selectInput("numeric_variable",label = "Select Numerical Variable", choices= numeric.variable)
+```
+
+
+
+
+
+Column {data-width=400}
+----------------------------------------------------------------------
+### Chart A
+
+```{r}
+
+```
+
+Column {data-width=400}
+----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
