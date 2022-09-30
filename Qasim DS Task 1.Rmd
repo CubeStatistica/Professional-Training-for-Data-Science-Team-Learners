@@ -95,11 +95,25 @@ We will demonstrate how python will run in RStudio.
 ## Inspecting unique entities across all the columns
 ```{python}
 
-df=pd.read_csv("Data/Data - DS C1 Course.csv")
-for x in df:
-  print(df[x].unique())
+df_raw=pd.read_csv("Data/Data - DS C1 Course.csv")
+for x in df_raw:
+  print(df_raw[x].unique())
 ```
 
+## Writing a function which returns percentage of unique values in columns 
+```{python}
+
+def unique_value_percent(x):
+  return (len(x.unique())/x.count())*100;
+
+```
+
+## Showing percentage of unique values in each column
+```{python}
+
+for x in df_raw.columns:
+  print("Percentage of unique value in '" ,x, " = ", unique_value_percent(df_raw[x]),"%")
 
 
+```
 
