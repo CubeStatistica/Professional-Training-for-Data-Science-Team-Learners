@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Qasim's Flexdashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -9,26 +9,26 @@ output:
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
+library(shiny)
+library(dplyr)
 ```
 # Page 1
 Column
 -----------------------------------------------------------------------
 
-### Chart A
-### Chart B
 
-## Importing Data from csv
 ### Importing Data from csv
-```{r}
-course_data <- read_csv("Data/Data - DS C1 Course.csv")
+```{r, include=FALSE}
+df_raw <- read_csv("data_cleaned.csv")
 
 
 ```
+
 
 ## Summarize the Data
 ```{r}
 
-course_data %>% group_by(Gender) %>%  count()
+df_raw %>% group_by(Gender) %>%  count()
 
 ```
 
@@ -38,7 +38,7 @@ Column
 ### Chart C
 
 ```{r}
-#course_data %>% colnames()
+#df_raw %>% colnames()
 
 ```
 
@@ -54,12 +54,41 @@ Column
 ```{r}
 
 
+total_count <- df_raw %>% count()
+categorical <- c('Gender','Enrolled')
+
+numeric <- c('Age')
+
+
 ```
 
 
-Column 
+Column{.sidebar} 
 -----------------------------------------------------------------------
 
-### Qasim's Flexdashboard
+
+```{r}
+
+selectInput(inputId = "categorical_variable",label="Select Categorical Variable", choices = categorical)
+selectInput(inputId = "numeric_variable",label="Select Numeric Variable", choices = numeric)
+sliderInput(inputId = "Age", label="Select Age Range", min=17,max=60,value=24)
+
+
+
+
+```
+
+```{r}
+
+
+
+
+
+
+
+```
+
+
+
 
 # Page 2
