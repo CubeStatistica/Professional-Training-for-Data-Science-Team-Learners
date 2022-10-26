@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Qasim's Flexdashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -9,25 +9,27 @@ output:
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
+library(shiny)
+library(dplyr)
 ```
 # Page 1
 Column
 -----------------------------------------------------------------------
 
 
-## Importing Data from csv
 ### Importing Data from csv
-```{r}
-course_data <- read_csv("Data/Data - DS C1 Course.csv")
+```{r, include=FALSE}
+df_raw <- read_csv("data_cleaned.csv")
 
 
 ```
+
 
 ## Summarize the Data
 ### Summarize the Data
 ```{r}
 
-summary(course_data)
+
 
 ```
 
@@ -37,7 +39,7 @@ Column
 ### Inspecting column names
 
 ```{r}
-course_data %>% colnames()
+
 
 ```
 
@@ -53,12 +55,17 @@ course_data %>% colnames()
 ```{r}
 
 
+total_count <- df_raw %>% count()
+categorical <- c('Gender','Enrolled')
+
+numeric <- c('Age')
+
+
 ```
 
 
-Column 
+Column{.sidebar} 
 -----------------------------------------------------------------------
 
-### Chart D
 
 # Page 2
