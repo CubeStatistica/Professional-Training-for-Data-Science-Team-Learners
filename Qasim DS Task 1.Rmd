@@ -10,11 +10,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(dplyr)
-<<<<<<< HEAD
-=======
 library(ggplot2)
->>>>>>> b114555 (Updated git ignore and Added Flexdashboard)
+
 ```
+
+## Importing Python Packages 
+```{python}
+import pandas as pd
+import numpy as np
+
+
+```
+
 
 ## Importing the Data
 
@@ -27,7 +34,7 @@ course_data <- read_csv("Data/Data - DS C1 Course.csv")
 
 ## Data Summary
 ```{r}
-summary(course_data)
+#summary(course_data)
 
 ```
 
@@ -38,13 +45,11 @@ summary(course_data)
 colnames(course_data)
 
 
-<<<<<<< HEAD
 ```
 
 
-=======
 
-```
+
 
 ## Inspecting null values in the dataset
 
@@ -63,7 +68,6 @@ ggplot(data= course_data,aes(x= Age, y=`Which City are you currently residing in
 
 
 ```
->>>>>>> b114555 (Updated git ignore and Added Flexdashboard)
 
 
 
@@ -71,13 +75,7 @@ ggplot(data= course_data,aes(x= Age, y=`Which City are you currently residing in
 
 
 
-
-
-
-
-
-
-## Exploratory Data Analysis (EDA)
+## Running python in R Studio
 
 
 ```{r EDA }
@@ -85,26 +83,37 @@ ggplot(data= course_data,aes(x= Age, y=`Which City are you currently residing in
 
 library(reticulate)
 
+
+
 ```
 
 ## Running Python in R
 We will demonstrate how python will run in RStudio.
 
+
+
+## Inspecting unique entities across all the columns
 ```{python}
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-data= pd.read_csv("Data/Data - DS C1 Course.csv")
-data_age= data["Age"].sort_values(ascending=False)
-abc=list(data.columns)
-data_age1=data[data["Age"]!= "Under 17"];
-data_age1=data_age1.sort_values("Age");
-sns.countplot("Age",data=data_age1)
-plt.show()
+
+df_raw=pd.read_csv("Data/Data - DS C1 Course.csv")
+for x in df_raw:
+  print(df_raw[x].unique())
 ```
 
+## Writing a function which returns percentage of unique values in columns 
+```{python}
+
+def unique_value_percent(x):
+  return (len(x.unique())/x.count())*100;
+
+```
+
+## Showing percentage of unique values in each column
+```{python}
+
+for x in df_raw.columns:
+  print("Percentage of unique value in '" ,x, " = ", unique_value_percent(df_raw[x]),"%")
 
 
-
+```
 

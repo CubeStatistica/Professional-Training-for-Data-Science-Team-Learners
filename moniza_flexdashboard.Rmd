@@ -11,18 +11,23 @@ library(flexdashboard)
 library(tidyverse)
 ```
 
+# Course Data
+
 Column 
 -----------------------------------------------------------------------
-# Course Data
+
 
 ### Importing Data
 
 ```{r, echo=TRUE}
 dfRaw <- read_csv("Data/Data - DS C1 Course.csv")
 ```
+
+# Statistics
+
 Column 
 -----------------------------------------------------------------------
-# Statistics
+
 ### Summarizing Data
 
 ```{r}
@@ -55,6 +60,17 @@ Column
 
 ```{r}
 dfRaw %>% group_by(Gender,"How and where did you hear about this course?") 
+```
+
+# Graphical Analysis
+
+Column 
+-----------------------------------------------------------------------
+### Creating plot
+
+```{r}
+df_paid<- dfRaw %>% group_by(`Do you understand that this is a paid course ?...21`) %>% count()
+ggplot(df_paid, aes(x='Do you understand that this is a paid course ?...21`,y=n))+geom_bar(stat="identity")
 ```
 
 

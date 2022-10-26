@@ -1,0 +1,258 @@
+---
+title: "Data Cleaning DS C1"
+author: "Umair Waseem"
+date: "2022-09-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Loading specific libraries:
+```{r}
+library("tidyverse")
+library("dplyr")
+library("lubridate")
+```
+
+
+## Loading our dataset
+
+
+```{r dataloading}
+dfRaw <- read_csv("Data/Data - DS C1 Course.csv")
+head(dfRaw, n=10)
+
+# To check how many number of columns and rows we have, simply using dim command
+dim(dfRaw)
+colnames(dfRaw)
+```
+```{r}
+colnames(dfRaw)
+
+
+```
+## DataColumns renaming
+```{r}
+#column renaming
+dataRenamed <- dfRaw |>
+  rename("Id" = "Student ID",
+         "Date_time" = "Timestamp",
+         "uniName" = "Name of University or College currently or previously attended?")
+
+names(dataRenamed[1:10])
+#dataSelected <- column_to_rownames(dataSelected , var = "Id")
+```
+## Variable Selection
+
+```{r Variable Selected for analysis}
+
+dataSelected <- select(dataRenamed, Id, Date_time, uniName)
+
+
+head(dataSelected, n = 5)
+
+```
+
+# Correcting date_Time feature  for getting dates out of it
+
+```{r}
+class(dataSelected$Date_time)
+dataSelected$Date_time <- lubridate::mdy_hms(dataSelected$Date_time)
+class(dataSelected$Date_time)
+dataSelected <- tidyr::separate(dataSelected, Date_time, c("Date", "Time"), sep = " ")
+dataSelected$Date <- lubridate::ymd(dataSelected$Date)
+
+
+
+
+
+```
+
+## Now We go with the column uniName and find out Uni names typed differently and merge them to single new variable
+
+```{r}
+dataSelected |> select(uniName) |>
+  unique() |> count()
+
+
+
+# So we have fount that out of 247 there are 143 unique values that means there is same universities mis-typed differently. So our next goal is to find those values and store to a new column under same flag name. 
+
+unique(dataSelected$uniName)
+
+
+
+
+
+
+```
+```{r}
+dataCategorized <- dataSelected |>
+  mutate(University = case_when(
+    str_detect(uniName, "IBA|Institute of Business Administration|Iba Karachi|IBA, Karachi|Iba Karachi|institute of business administration|Institute of business administration|INSTITUTE OF BUSINESS ADMINISTRATION KARACHI|Institute Of Business Administration|Institute Of Business Administration, Karachi|Institute of Business Adminstration|Institute of business administration karachi|INSTITUTE OF BUISNESS ADMINISTRATION KARACHI" 
+  ) ~ "IBA",
+  str_detect(
+    uniName, "Azam|Quaid I azam university|Quaid-I-Azam University, Islamabad|Quaid e Azam University|Quaid e Azam university       Islamabad|Quaid-e-Azam University Islamabad|Quaid-i-Azam University Islamabad|Quaid e Azzam university Islamabad"
+  ) ~ "QU",
+  str_detect(
+    uniName, "Sir syed university of Engineering Technology|Sir syed university of engineering and technology|Sir Syed University|Sir Syed University Of Engineering And Technology|Sir Syed University Of Engineering & Technology|Sir syed University of engineering and technology|Sirsyed university of engineering and technology|Sir Syed University of Engineering and Technology|Sir Syed university of engineering and technology|Sur Syed University of Engineering and Technology|Sir Syed University Engineering Technology" 
+    ) ~ "SirSyed",
+  str_detect(
+    uniName,  "Ned university|NED University of Engineering and Technology Karachi|NED|Ned University"
+      ) ~ "NED",
+  str_detect(
+    uniName, "IQRA|Iqra|iqra|iqra university") ~ "IQRA",
+  str_detect(uniName, "Sindh|Smiu") ~ "SMIU" ,
+  str_detect(uniName, "Karachi|University of karachi") ~ "KU",
+  str_detect(uniName, "Szabist", ) ~ "SZABIST",
+  str_detect(uniName, "Management|management", ) ~ "IOBM",
+  str_detect(uniName, "University of engineering and technology Peshawar|University of Engineering and Technology Peshawar|University of Engineering and Technology Taxila") ~ "UET",
+  str_detect(uniName, "COMSATS|Comsats|comsats")~ "COMSATS",
+  str_detect(uniName, "LUMS|Lums|Lahore University of Management Sciences")~ "LUMS",
+  str_detect(uniName, "Virtual|virtual|VIRTUAL")~ "VU",
+  str_detect(uniName, "Bahria|bahria|BAHRIA")~ "Bahri",
+  str_detect(uniName, "Bahria|MEHRAN|Mehran")~ "Mehran University of Engineering",
+  
+  TRUE ~ uniName  #keep all others same
+  
+  
+  )
+  
+      )
+
+
+unique(dataCategorized$University)  #this function will return unique value out of column/feature
+colnames(dataCategorized)
+```
+Now we'll look into location columns and we are selecting two columns country and city, first we'll check unique values in it then cleaning in next step.
+
+```{r}
+dataLoc <- select(dfRaw, "Which Country are you currently residing in?", "Which City are you currently residing in?")
+
+colnames(dataLoc)
+
+unique(dataLoc$`Which Country are you currently residing in?`)
+```
+```{r}
+dataLoc<- dataLoc |>
+  mutate(Country = case_when(
+    str_detect(`Which Country are you currently residing in?`, "Pakistan|PK|pakistan|Karachi|KARACHI|pk|Lahore|PAKISTAN")~"Pakistan",
+    TRUE ~ `Which Country are you currently residing in?`
+  )         )
+
+unique(dataLoc$Country)
+
+```
+```{r}
+# Now City Column
+unique(dataLoc$`Which City are you currently residing in?`)
+
+dataLoc<- dataLoc |>
+  mutate(City = case_when(
+    str_detect(`Which City are you currently residing in?`,
+               "Karachi|KARACHI|karachi")~"Karachi",
+    str_detect(`Which City are you currently residing in?`,
+               "Islamabad|islamabad|ISLAMABAD")~"Islamabad",
+    str_detect(`Which City are you currently residing in?`,
+               "Abbottabad|abbottabad")~"Abbottabad",
+    str_detect(`Which City are you currently residing in?`,
+               "Pakistan")~"Not Specified",
+      TRUE ~ `Which City are you currently residing in?`
+  )         )
+
+unique(dataLoc$City)
+```
+Now we move forward to Degree column and see whats the challenge here
+
+
+
+```{r}
+
+ dataCategorized <- dataCategorized |> mutate(Degree =case_when(
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Software|software|SE|SOFTWARE ENGINEERING")~"BS Software Engineering",
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Computer|Bcs|COMPUTER|CS|computer|BsCs|Bscs|Bs CE")~"Compute Science",
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Business Adminsitration|business administration|BBA-H|MBA|BBA (honor)|BBA")~"Business Administration",
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Economics|economics|economic")~"Economics",
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Data Science|data science|DATA SCIENCE|Data science")~"Data Sciences",
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Electrical Engineering|Electrical engineering|Electronics Engineering")~"Electrical Engineering",
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Yes|I'm very puntual")~"Incomplete Infromation",
+   str_detect(dfRaw$`Discipline of Degree?`,
+             "Finance|Accounting|accounting and Finance|accounting and finance")~"Accounting and Finance",
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Statistics|statistics")~"Statistics",
+  str_detect(dfRaw$`Discipline of Degree?`,
+             "Artificial Intelligence|Artificial intelligence|BS AI")~"BS in AI",
+    TRUE ~ dfRaw$`Discipline of Degree?`
+) )
+
+```
+
+
+```{r}
+#unique(dataCategorized$Degree)
+colnames(dataCategorized)
+colnames(dataLoc)
+colnames(dfRaw)
+```
+Now we combine our clean data into new dataset
+
+
+```{r}
+head(dataCategorized)
+head(dataLoc)
+
+
+```
+```{r}
+# We are selecting columns other than we have cleaned from Raw data into variable 'data1'and then merge into we cleaned.
+
+data1 <- dfRaw |>select ('Do you understand that this is a paid course ?...3',
+                "Course Fee Email",
+                "Payment" ,
+                "Payment Receipt Sent",
+                "How and where did you hear about this course?",
+                "Gender" ,
+                "Age", 
+                "Are you currently attending University / College?" , 
+                "Have you taken any foundational course in data science / econometrics / statistics / computer science?",
+                "What programming language(s) are you most comfortable in (R, Python, Java, JS, etc.)? If none please type \"None\".",
+                "Prior Work Experience in Data Science or Machine Learning",
+                "Primary Reason for taking this course?", 
+                "Do you understand that this is a paid course ?...21", 
+                "Prior Formal Education (course teaching or using R, university assignments, coding projects, course work, etc.) in R?",
+                "Prior Formal Education (course teaching or using Python, university assignments, coding projects, course work, etc.) in Python?",
+                "Prior Work Experience in R.",
+                "Prior Work Experience in Python.",
+                "Personal Education or Knowledge (learning R on your own and/or doing personal projects, etc.) in R?",
+                "Do you have a LinkedIn Account?", 
+                "Do you have any feedback, thoughts, or comments you would like to share?"
+                )
+
+
+
+```
+
+```{r}
+data2 <- cbind(dataCategorized, dataLoc)
+colnames(data2)
+datac <- data2 |> select( Id, Date, University, Degree, Country, City)
+
+dataCleaned <- cbind(datac, data1)
+
+```
+
+```{r}
+dim(dataCleaned)
+
+write_csv(dataCleaned, "Data/dataCleaned1.csv")
+
+```
+

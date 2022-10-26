@@ -26,19 +26,20 @@ df_raw <- read_csv("data_cleaned.csv")
 
 
 ## Summarize the Data
+### Summarize the Data
 ```{r}
 
-df_raw %>% group_by(Gender) %>%  count()
+
 
 ```
 
 Column 
 -----------------------------------------------------------------------
 
-### Chart C
+### Inspecting column names
 
 ```{r}
-#df_raw %>% colnames()
+
 
 ```
 
@@ -65,30 +66,6 @@ numeric <- c('Age')
 
 Column{.sidebar} 
 -----------------------------------------------------------------------
-
-
-```{r}
-
-selectInput(inputId = "categorical_variable",label="Select Categorical Variable", choices = categorical)
-selectInput(inputId = "numeric_variable",label="Select Numeric Variable", choices = numeric)
-sliderInput(inputId = "Age", label="Select Age Range", min=17,max=60,value=24)
-
-
-
-
-```
-
-```{r}
-
-
-
-
-
-
-
-```
-
-
 
 
 # Page 2

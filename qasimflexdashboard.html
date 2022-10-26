@@ -2580,66 +2580,241 @@ window.FlexDashboardComponents.push({
 <h1>Page 1</h1>
 <div id="column" class="section level2">
 <h2>Column</h2>
-<div id="importing-data-from-csv" class="section level3">
 <h3>Importing Data from csv</h3>
 </div>
 </div>
 <div id="summarize-the-data" class="section level2">
 <h2>Summarize the Data</h2>
+<div id="summarize-the-data-1" class="section level3">
+<h3>Summarize the Data</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<pre><code># A tibble: 3 × 2
-# Groups:   Gender [3]
-  Gender                n
-  &lt;chr&gt;             &lt;int&gt;
-1 Female               56
-2 Male                190
-3 Prefer not to say     1</code></pre>
+<pre><code>  Timestamp           Student ID   
+ Length:247         Min.   :  1.0  
+ Class :character   1st Qu.: 62.5  
+ Mode  :character   Median :124.0  
+                    Mean   :124.0  
+                    3rd Qu.:185.5  
+                    Max.   :247.0  
+                                   
+ Do you understand that this is a paid course ?...3 Course Fee Email  
+ Length:247                                         Length:247        
+ Class :character                                   Class :character  
+ Mode  :character                                   Mode  :character  
+                                                                      
+                                                                      
+                                                                      
+                                                                      
+   Date sent            Payment          Payment Receipt Sent
+ Min.   :2022-08-23   Length:247         Length:247          
+ 1st Qu.:2022-08-25   Class :character   Class :character    
+ Median :2022-08-26   Mode  :character   Mode  :character    
+ Mean   :2022-08-26                                          
+ 3rd Qu.:2022-08-27                                          
+ Max.   :2022-09-01                                          
+ NA&#39;s   :9                                                   
+ How and where did you hear about this course?
+ Length:247                                   
+ Class :character                             
+ Mode  :character                             
+                                              
+                                              
+                                              
+                                              
+ Which Country are you currently residing in?
+ Length:247                                  
+ Class :character                            
+ Mode  :character                            
+                                             
+                                             
+                                             
+                                             
+ Which City are you currently residing in?    Gender         
+ Length:247                                Length:247        
+ Class :character                          Class :character  
+ Mode  :character                          Mode  :character  
+                                                             
+                                                             
+                                                             
+                                                             
+     Age            Are you currently attending University / College?
+ Length:247         Length:247                                       
+ Class :character   Class :character                                 
+ Mode  :character   Mode  :character                                 
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+ Latest Degree Completed or in Progress?
+ Length:247                             
+ Class :character                       
+ Mode  :character                       
+                                        
+                                        
+                                        
+                                        
+ Name of University or College currently or previously attended?
+ Length:247                                                     
+ Class :character                                               
+ Mode  :character                                               
+                                                                
+                                                                
+                                                                
+                                                                
+ Discipline of Degree?
+ Length:247           
+ Class :character     
+ Mode  :character     
+                      
+                      
+                      
+                      
+ Have you taken any foundational course in data science / econometrics / statistics / computer science?
+ Length:247                                                                                            
+ Class :character                                                                                      
+ Mode  :character                                                                                      
+                                                                                                       
+                                                                                                       
+                                                                                                       
+                                                                                                       
+ What programming language(s) are you most comfortable in (R, Python, Java, JS, etc.)? If none please type &quot;None&quot;.
+ Length:247                                                                                                       
+ Class :character                                                                                                 
+ Mode  :character                                                                                                 
+                                                                                                                  
+                                                                                                                  
+                                                                                                                  
+                                                                                                                  
+ Prior Work Experience in Data Science or Machine Learning
+ Length:247                                               
+ Class :character                                         
+ Mode  :character                                         
+                                                          
+                                                          
+                                                          
+                                                          
+ Primary Reason for taking this course?
+ Length:247                            
+ Class :character                      
+ Mode  :character                      
+                                       
+                                       
+                                       
+                                       
+ Do you understand that this is a paid course ?...21
+ Length:247                                         
+ Class :character                                   
+ Mode  :character                                   
+                                                    
+                                                    
+                                                    
+                                                    
+ Prior Formal Education (course teaching or using R, university assignments, coding projects, course work, etc.) in R?
+ Length:247                                                                                                           
+ Class :character                                                                                                     
+ Mode  :character                                                                                                     
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
+ Prior Formal Education (course teaching or using Python, university assignments, coding projects, course work, etc.) in Python?
+ Length:247                                                                                                                     
+ Class :character                                                                                                               
+ Mode  :character                                                                                                               
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+ Prior Work Experience in R. Prior Work Experience in Python.
+ Length:247                  Length:247                      
+ Class :character            Class :character                
+ Mode  :character            Mode  :character                
+                                                             
+                                                             
+                                                             
+                                                             
+ Personal Education or Knowledge (learning R on your own and/or doing personal projects, etc.) in R?
+ Length:247                                                                                         
+ Class :character                                                                                   
+ Mode  :character                                                                                   
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+ Personal Education or Knowledge (learning Python on your own and/or doing personal projects, etc.) in Python?
+ Length:247                                                                                                   
+ Class :character                                                                                             
+ Mode  :character                                                                                             
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+ Do you have a LinkedIn Account?
+ Length:247                     
+ Class :character               
+ Mode  :character               
+                                
+                                
+                                
+                                
+ Do you have any feedback, thoughts, or comments you would like to share?
+ Length:247                                                              
+ Class :character                                                        
+ Mode  :character                                                        
+                                                                         
+                                                                         
+                                                                         
+                                                                         </code></pre>
+</div>
 </div>
 <div id="column-1" class="section level2">
 <h2>Column</h2>
+<div id="inspecting-column-names" class="section level3">
+<h3>Inspecting column names</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<pre><code> [1] &quot;Timestamp&quot;                                                                                                                      
+ [2] &quot;Student ID&quot;                                                                                                                     
+ [3] &quot;Do you understand that this is a paid course ?...3&quot;                                                                             
+ [4] &quot;Course Fee Email&quot;                                                                                                               
+ [5] &quot;Date sent&quot;                                                                                                                      
+ [6] &quot;Payment&quot;                                                                                                                        
+ [7] &quot;Payment Receipt Sent&quot;                                                                                                           
+ [8] &quot;How and where did you hear about this course?&quot;                                                                                  
+ [9] &quot;Which Country are you currently residing in?&quot;                                                                                   
+[10] &quot;Which City are you currently residing in?&quot;                                                                                      
+[11] &quot;Gender&quot;                                                                                                                         
+[12] &quot;Age&quot;                                                                                                                            
+[13] &quot;Are you currently attending University / College?&quot;                                                                              
+[14] &quot;Latest Degree Completed or in Progress?&quot;                                                                                        
+[15] &quot;Name of University or College currently or previously attended?&quot;                                                                
+[16] &quot;Discipline of Degree?&quot;                                                                                                          
+[17] &quot;Have you taken any foundational course in data science / econometrics / statistics / computer science?&quot;                         
+[18] &quot;What programming language(s) are you most comfortable in (R, Python, Java, JS, etc.)? If none please type \&quot;None\&quot;.&quot;            
+[19] &quot;Prior Work Experience in Data Science or Machine Learning&quot;                                                                      
+[20] &quot;Primary Reason for taking this course?&quot;                                                                                         
+[21] &quot;Do you understand that this is a paid course ?...21&quot;                                                                            
+[22] &quot;Prior Formal Education (course teaching or using R, university assignments, coding projects, course work, etc.) in R?&quot;          
+[23] &quot;Prior Formal Education (course teaching or using Python, university assignments, coding projects, course work, etc.) in Python?&quot;
+[24] &quot;Prior Work Experience in R.&quot;                                                                                                    
+[25] &quot;Prior Work Experience in Python.&quot;                                                                                               
+[26] &quot;Personal Education or Knowledge (learning R on your own and/or doing personal projects, etc.) in R?&quot;                            
+[27] &quot;Personal Education or Knowledge (learning Python on your own and/or doing personal projects, etc.) in Python?&quot;                  
+[28] &quot;Do you have a LinkedIn Account?&quot;                                                                                                
+[29] &quot;Do you have any feedback, thoughts, or comments you would like to share?&quot;                                                       </code></pre>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+</div>
 <div id="chart-c" class="section level3">
 <h3>Chart C</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
 </div>
 </div>
-<div id="chart-c-1" class="section level3">
-<h3>Chart C</h3>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
-</div>
-</div>
-<div id="column-2" class="section level2 sidebar">
-<h2 class="sidebar">Column</h2>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
-<div class="form-group shiny-input-container">
-<label class="control-label" id="categorical_variable-label" for="categorical_variable">Select Categorical Variable</label>
-<div>
-<select id="categorical_variable"><option value="Gender" selected>Gender</option>
-<option value="Enrolled">Enrolled</option></select>
-<script type="application/json" data-for="categorical_variable" data-nonempty>{"plugins":["selectize-plugin-a11y"]}</script>
-</div>
-</div>
-<div class="form-group shiny-input-container">
-<label class="control-label" id="numeric_variable-label" for="numeric_variable">Select Numeric Variable</label>
-<div>
-<select id="numeric_variable"><option value="Age" selected>Age</option></select>
-<script type="application/json" data-for="numeric_variable" data-nonempty>{"plugins":["selectize-plugin-a11y"]}</script>
-</div>
-</div>
-<div class="form-group shiny-input-container">
-<label class="control-label" id="Age-label" for="Age">Select Age Range</label>
-<input class="js-range-slider" id="Age" data-skin="shiny" data-min="17" data-max="60" data-from="24" data-step="1" data-grid="true" data-grid-num="8.6" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"></input>
-</div>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
 </div>
